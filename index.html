@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Six</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Prompt', sans-serif;
+    }
+    body {
+      position: relative;
+      color: white;
+      background-color: #000;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://cdn.discordapp.com/attachments/1308774142451122209/1378782298601685155/IMG_7028.GIF?ex=683dda94&is=683c8914&hm=0ccb4a6e1ee070775aab906745151713efdeca14d12acd2cba7ad5dcc26cdc34&') no-repeat center center/cover;
+      opacity: 0.3;
+      z-index: -1;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 400px;
+      animation: fadeIn 1s ease-in-out;
+      backdrop-filter: blur(10px);
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid white;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      background: #0636d4;
+      transition: background 0.3s;
+    }
+    .buttons a:hover {
+      background: #0813b2;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- เพลงพื้นหลัง -->
+  <audio autoplay loop hidden>
+    <source src="https://youtu.be/U-Qp-CMuD8I?si=bj002ttJzO4YCpYs" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="card">
+    <img class="avatar" src="https://cdn.discordapp.com/attachments/1308774142451122209/1378782298601685155/IMG_7028.GIF?ex=683dda94&is=683c8914&hm=0ccb4a6e1ee070775aab906745151713efdeca14d12acd2cba7ad5dcc26cdc34&" alt="Avatar">
+    <h1>Six <span style="color:#2b41ff">Txnt</span></h1>
+    <p>Lua Html Css Java Python | Roblox System Fivem System Discord Bot</p>
+    <div class="buttons">
+      <a href="https://discord.gg/PAnqs3xUnS" target="_blank" onclick="playClickSound()">Join discord!</a>
+    </div>
+  </div>
+
+  <!-- เสียงตอนคลิกปุ่ม -->
+  <audio id="clickSound" src="https://www.myinstants.com/media/sounds/minecraft_click.mp3" preload="auto"></audio>
+  <script>
+    function playClickSound() {
+      document.getElementById('clickSound').play();
+    }
+  </script>
+</body>
+</html>
